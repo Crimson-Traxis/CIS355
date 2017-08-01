@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() { 
+            roundsRequest("displayList",0);
+        });
+        
+        // Submit a request to the persons table.
+        function roundsRequest(action, id) {
+            $.post(
+                "index.php",
+                "table="   + "rounds"          +
+                "&action=" + action             +
+                "&id="     + id                 +
+                "&course_id=" + $("#course_id").val() +
+                "&person_id=" + $("#person_id").val() +
+                "&description=" + $("#description").val() +
+                "&strokes01=" + $("#strokes01").val() +
+                "&strokes02=" + $("#strokes02").val() +
+                "&strokes03=" + $("#strokes03").val() +
+                "&strokes04=" + $("#strokes04").val() +
+                "&strokes05=" + $("#strokes05").val() +
+                "&strokes06=" + $("#strokes06").val() +
+                "&strokes07=" + $("#strokes07").val() +
+                "&strokes08=" + $("#strokes08").val() +
+                "&strokes09=" + $("#strokes09").val() +
+                "&strokes10=" + $("#strokes10").val() +
+                "&strokes11=" + $("#strokes11").val() +
+                "&strokes12=" + $("#strokes12").val() +
+                "&strokes13=" + $("#strokes13").val() +
+                "&strokes14=" + $("#strokes14").val() +
+                "&strokes15=" + $("#strokes15").val() +
+                "&strokes16=" + $("#strokes16").val() +
+                "&strokes17=" + $("#strokes17").val() +
+                "&strokes18=" + $("#strokes18").val() +
+                "&teedate=" + $("#teedate").val() +
+                "&teetime=" + $("#teetime").val()
+            ).done(function( msg ) { 
+                $("#content").html( msg );
+            });
+        }
+    </script>
+    <style>
+        .btn {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
